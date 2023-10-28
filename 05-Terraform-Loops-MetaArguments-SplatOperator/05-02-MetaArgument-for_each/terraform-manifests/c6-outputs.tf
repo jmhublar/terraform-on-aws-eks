@@ -22,6 +22,15 @@ output "instance_publicdns2" {
   value = tomap({for az, instance in aws_instance.myec2vm: az => instance.public_dns})
 }
 
+output "available_instance_types" {
+  description = "The available instance types."
+  value       = data.aws_ec2_instance_type_offerings.available.locations
+}
+
+output "availability_zones" {
+  description = "The available zones."
+  value       = { for az in toset(data.aws_availability_zones.my_azones.names) : az => az }
+}
 
 /*
 # Additional Important Note about OUTPUTS when for_each used
