@@ -402,7 +402,7 @@ resource "kubernetes_job_v1" "irsa_demo" {
 # Generic Variables
 aws_region = "us-east-1"
 environment = "dev"
-business_divsion = "hr"
+business_divsion = "SRE"
 ```
 ## Step-21: Execute Terraform Commands
 - **Folder:** 02-eks-irsa-demo-terraform-manifests

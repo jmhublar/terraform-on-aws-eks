@@ -72,7 +72,7 @@ description: Implement Terraform Remote State Storage with AWS S3 and DynamnoDB
 # Generic Variables
 aws_region = "us-east-1"
 environment = "dev"
-business_divsion = "hr"
+business_divsion = "SRE"
 ```
 
 ## Step-05: Add State Locking Feature using DynamoDB Table

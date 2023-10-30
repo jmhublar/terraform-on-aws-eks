@@ -188,7 +188,7 @@ locals {
 # Generic Variables
 aws_region = "us-east-1"
 environment = "dev"
-business_divsion = "hr"
+business_divsion = "SRE"
 ```
 ## Step-13: c4-01-ebs-csi-datasources.tf
 - **Folder:** `14-EBS-CSI-Install-Kubernetes-Storage/02-ebs-terraform-manifests`

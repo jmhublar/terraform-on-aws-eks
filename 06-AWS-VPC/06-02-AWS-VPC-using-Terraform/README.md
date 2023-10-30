@@ -325,7 +325,7 @@ output "azs" {
 # Generic Variables
 aws_region = "us-east-1"  
 environment = "dev"
-business_divsion = "HR"
+business_divsion = "SRE"
 ```
 
 ## Step-11: vpc.auto.tfvars
