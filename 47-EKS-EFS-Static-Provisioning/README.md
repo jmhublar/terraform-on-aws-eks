@@ -17,7 +17,7 @@ description: Learn to Automate AWS EKS Kubernetes EFS Static Provisioning with T
 data "terraform_remote_state" "eks" {
   backend = "s3"
   config = {
-    bucket = "terraform-on-aws-eks"
+    bucket = "jmh-terraform-state-bucket"
     key    = "dev/eks-cluster/terraform.tfstate"
     region = "us-east-1" 
   }
@@ -27,7 +27,7 @@ data "terraform_remote_state" "eks" {
 data "terraform_remote_state" "efs" {
   backend = "s3"
   config = {
-    bucket = "terraform-on-aws-eks"
+    bucket = "jmh-terraform-state-bucket"
     key    = "dev/efs-csi/terraform.tfstate"
     region = "us-east-1" 
   }

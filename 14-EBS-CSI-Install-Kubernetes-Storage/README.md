@@ -25,7 +25,7 @@ description: Learn to implement EKS IAM Role for Kubernetes Service Accounts
 ```t
   # Adding Backend as S3 for Remote State Storage
   backend "s3" {
-    bucket = "terraform-on-aws-eks"
+    bucket = "jmh-terraform-state-bucket"
     key    = "dev/eks-cluster/terraform.tfstate"
     region = "us-east-1" 
  
@@ -41,7 +41,7 @@ description: Learn to implement EKS IAM Role for Kubernetes Service Accounts
 ```t
   # Adding Backend as S3 for Remote State Storage
   backend "s3" {
-    bucket = "terraform-on-aws-eks"
+    bucket = "jmh-terraform-state-bucket"
     key    = "dev/eks-cluster/terraform.tfstate"
     region = "us-east-1" 
  
@@ -116,7 +116,7 @@ terraform {
   }
   # Adding Backend as S3 for Remote State Storage
   backend "s3" {
-    bucket = "terraform-on-aws-eks"
+    bucket = "jmh-terraform-state-bucket"
     key    = "dev/ebs-storage/terraform.tfstate"
     region = "us-east-1" 
 
@@ -138,7 +138,7 @@ provider "aws" {
 data "terraform_remote_state" "eks" {
   backend = "s3"
   config = {
-    bucket = "terraform-on-aws-eks"
+    bucket = "jmh-terraform-state-bucket"
     key    = "dev/eks-cluster/terraform.tfstate"
     region = var.aws_region
   }

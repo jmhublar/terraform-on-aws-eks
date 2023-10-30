@@ -56,7 +56,7 @@ description: Implement Terraform Remote State Storage with AWS S3 and DynamnoDB
 ```t
   # Adding Backend as S3 for Remote State Storage
   backend "s3" {
-    bucket = "terraform-on-aws-eks"
+    bucket = "jmh-terraform-state-bucket"
     key    = "dev/eks-cluster/terraform.tfstate"
     region = "us-east-1" 
  
@@ -129,7 +129,7 @@ Observation:
 ```t
   # Adding Backend as S3 for Remote State Storage
   backend "s3" {
-    bucket = "terraform-on-aws-eks"
+    bucket = "jmh-terraform-state-bucket"
     key    = "dev/app1k8s/terraform.tfstate"
     region = "us-east-1" 
 
@@ -145,7 +145,7 @@ Observation:
 data "terraform_remote_state" "eks" {
   backend = "s3"
   config = {
-    bucket = "terraform-on-aws-eks"
+    bucket = "jmh-terraform-state-bucket"
     key    = "dev/eks-cluster/terraform.tfstate"
     region = "us-east-1" 
   }
