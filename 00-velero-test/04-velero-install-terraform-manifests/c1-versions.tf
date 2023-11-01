@@ -28,11 +28,11 @@ terraform {
   # Adding Backend as S3 for Remote State Storage
   backend "s3" {
     bucket = "jmh-terraform-state-bucket"
-    key    = "dev/efs-csi/terraform.tfstate"
+    key    = "dev/eks-velero/terraform.tfstate"
     region = "us-east-1" 
 
     # For State Locking
-    dynamodb_table = "dev-efs-csi"    
+    dynamodb_table = "dev-eks-velero"    
   }     
 }
 
