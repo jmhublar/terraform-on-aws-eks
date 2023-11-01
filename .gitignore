@@ -32,3 +32,6 @@ override.tf.json
 # Ignore .envrc files as they are usually used to set environment variables for local
 # development
 .envrc
+
+# Ignore timestamps
+**/creation-time-vpc-id.txt
