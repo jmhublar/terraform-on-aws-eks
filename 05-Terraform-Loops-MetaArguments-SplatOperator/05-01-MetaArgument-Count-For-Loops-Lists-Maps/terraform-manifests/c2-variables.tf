@@ -6,6 +6,13 @@ variable "aws_region" {
   default = "us-east-1"
 }
 
+# AWS Profile
+variable "aws_profile" {
+  description = "AWS Profile to be used"
+  type = string
+  default = "default"
+}
+
 # AWS EC2 Instance Type
 variable "instance_type" {
   description = "EC2 Instnace Type"

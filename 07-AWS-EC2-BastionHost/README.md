@@ -165,12 +165,12 @@ resource "null_resource" "copy_ec2_keys" {
     host     = aws_eip.bastion_eip.public_ip    
     user     = "ec2-user"
     password = ""
-    private_key = file("/Users/cognomen/.ssh/eks-terraform-key.pem")
+    private_key = file("~/.ssh/eks-terraform-key.pem")
   }  
 
 ## File Provisioner: Copies the terraform-key.pem file to /tmp/terraform-key.pem
   provisioner "file" {
-    source      = "/Users/cognomen/.ssh/eks-terraform-key.pem"
+    source      = "~/.ssh/eks-terraform-key.pem"
     destination = "/tmp/eks-terraform-key.pem"
   }
 ## Remote Exec Provisioner: Using remote-exec provisioner fix the private key permissions on Bastion Host
@@ -312,7 +312,7 @@ terraform apply -auto-approve
 4. Connect to Bastion EC2 Instnace
 ```t
 # Connect to Bastion EC2 Instance
-ssh -i /Users/cognomen/.ssh/eks-terraform-key.pem ec2-user@<Elastic-IP-Bastion-Host>
+ssh -i ~/.ssh/eks-terraform-key.pem ec2-user@<Elastic-IP-Bastion-Host>
 sudo su -
 
 # Verify File and Remote Exec Provisioners moved the EKS PEM file

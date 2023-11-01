@@ -58,3 +58,8 @@ output "output_v3_4" {
     for az, details in data.aws_ec2_instance_type_offerings.my_ins_type: 
     az => details.instance_types if length(details.instance_types) != 0 })[0]
 }
+
+
+output "raw_data" {
+  value = data.aws_ec2_instance_type_offerings.my_ins_type2
+}
