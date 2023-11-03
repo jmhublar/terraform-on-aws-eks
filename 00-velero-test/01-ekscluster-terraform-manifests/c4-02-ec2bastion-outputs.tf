@@ -4,11 +4,11 @@
 ## ec2_bastion_public_instance_ids
 output "ec2_bastion_public_instance_ids" {
   description = "List of IDs of instances"
-  value       = module.ec2_public.id
+  value       = try(module.ec2_public.id, null)
 }
 
 ## ec2_bastion_public_ip
 output "ec2_bastion_public_ip" {
   description = "Elastic IP associated to the Bastion Host"
-  value       = aws_eip.bastion_eip.public_ip
+  value       = try(aws_eip.bastion_eip[0].public_ip, null)
 }

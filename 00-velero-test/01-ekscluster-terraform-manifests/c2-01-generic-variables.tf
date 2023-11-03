@@ -15,5 +15,12 @@ variable "environment" {
 variable "business_divsion" {
   description = "Business Division in the large organization this Infrastructure belongs"
   type = string
-  default = "SAP"
+  default = "SRE"
+}
+
+# Bastion Options
+variable "do_deploy_bastion" {
+  description = "Do you want to deploy Bastion Host?"
+  type = bool
+  default = false
 }

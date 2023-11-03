@@ -1,6 +1,7 @@
 # AWS EC2 Instance Terraform Module
 # Bastion Host - EC2 Instance that will be created in VPC Public Subnet
 module "ec2_public" {
+  count = var.do_deploy_bastion ? 1 : 0
   source  = "terraform-aws-modules/ec2-instance/aws"
   #version = "3.3.0"
   version = "5.0.0"

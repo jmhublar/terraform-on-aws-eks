@@ -4,7 +4,7 @@ resource "null_resource" "copy_ec2_keys" {
   # Connection Block for Provisioners to connect to EC2 Instance
   connection {
     type     = "ssh"
-    host     = aws_eip.bastion_eip.public_ip    
+    host     = aws_eip.bastion_eip[0].public_ip    
     user     = "ec2-user"
     password = ""
     private_key = file("~/.ssh/eks-terraform-key.pem")
